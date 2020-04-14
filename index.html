@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>营销号文案生成器</title>
+		<style type="text/css">
+			.in {
+				width: 100%;
+				height: 30px;
+				margin-bottom: 10px;
+				padding-left: 5px;
+				border-radius: 10px;
+			}
+			
+			.bu {
+				font-size: 30px;
+				margin: 0 5%;
+				color: white;
+				font-weight: bold;
+				text-decoration: none;
+				border: 0px;
+				background-color: cornflowerblue;
+				box-shadow: 1px 1px 1px 1px white;
+				border-radius: 10px;
+			}
+			textarea{
+				border-radius: 20px;
+				padding: 20px;
+				line-height: 40px;
+				vertical-align:center
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--html-->
+		<center>
+			<h1>营销号文案生成器</h1></center>
+		<table style="margin: 0 auto;" width="80%">
+
+			<tr>
+				<td>主体：</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="main" id="main" value="" class="in" />
+				</td>
+			</tr>
+			<tr>
+				<td>事件：</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="sth" id="sth" value="" class="in" />
+				</td>
+			</tr>
+			<tr>
+				<td>另一种说法：</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="other" id="other" value="" class="in" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<center>
+						<button class="bu" onclick="toDo()">生成</button>
+						<button class="bu" onclick="clr()">清空</button>
+					</center>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<textarea name="text" rows="9" id="txt" cols="" style="width: 100%; font-size: 25px;"></textarea>
+				</td>
+			</tr>
+		</table>
+		<script>
+			function toDo() {
+				var main = document.getElementById("main").value;
+				var sth = document.getElementById("sth").value;
+				var other = document.getElementById("other").value;
+				//				console.log(main);
+				//				console.log(sth);
+				//				console.log(other);
+				var str = "\t" + main + sth + "是怎么回事呢？" + main + "相信大家都很熟悉，但是" + main + sth + "是怎么回事呢，下面就让小编带大家一起了解吧。\r\n\t"　　
+				str += main + sth + "，其实就是" + other + "，大家可能会很惊讶 " + main + "怎么会" + sth + "呢？但事实就是这样，小编也感到非常惊讶。\r\n\t"　　
+				str += "这就是关于" + main + sth + "的事情了，大家有什么想法呢，欢迎在评论区告诉小编一起讨论哦！"
+				console.log(str)
+				//				document.getElementById("txt").valueOf(str)
+				document.getElementById("txt").value = str
+			}
+
+			function clr() {
+				document.getElementById("main").value = "";
+				document.getElementById("sth").value = "";
+				document.getElementById("other").value = "";
+				document.getElementById("txt").value = "";
+			}
+		</script>
+	</body>
+
+</html>
